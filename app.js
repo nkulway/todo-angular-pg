@@ -6,6 +6,7 @@ const models = require('./models')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var todosRouter = require('./routes/todos');
 
 var app = express();
 
@@ -17,6 +18,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/api/v1/users', usersRouter);
+app.use('/api/v1/todos', todosRouter);
 
+// models.Todo.create({
+//   title: 'Create app',
+//   description: 'Build application using Angular and Postgres',
+//   dueDate: '2022-04-10',
+//   tag: '#letsgo'
+// })
 
 module.exports = app;
