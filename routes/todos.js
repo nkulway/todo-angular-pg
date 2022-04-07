@@ -11,6 +11,7 @@ router.get('/', checkAuth, (req, res) => {
   })
 })
 
+
 // POST /api/v1/todos
 router.post('/', checkAuth, (req, res) => {
   // check required fields
@@ -31,5 +32,25 @@ router.post('/', checkAuth, (req, res) => {
     res.status(201).json(todo)
   })
 })
- 
+
+
+// DELETE /api/v1/todos/9
+router.delete('/:id', checkAuth, (req, res) => {
+  // remove todo with id as long as user is logged in
+  models.Todo.destroy({ where: {
+    id: req.params.id, 
+    UserId: req.user.id 
+  }})
+  .then(numberDeleted => {
+    // if nothing was deleted return error
+    if (numberDeleted === 0) {
+      res.status(404).json({ error: 'Could not find that todo' })
+      return
+    }
+    // if deleted send success message
+    res.json({ success: 'Todo deleted successfully' })
+  })
+})
+
+
 module.exports  = router
