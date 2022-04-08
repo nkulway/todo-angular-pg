@@ -1,0 +1,44 @@
+<form class="add-form" (ngSubmit)="onSubmit()">
+  <div class="form-control">
+    <label for="title">Title</label>
+    <!-- two way data binding with [()] -->
+    <input
+      type="text"
+      name="title"
+      [(ngModel)]="title"
+      id="title"
+      placeholder="Add Todo.."
+    />
+  </div>
+  <div class="form-control">
+    <label for="description">Description</label>
+    <input
+      type="text"
+      name="description"
+      [(ngModel)]="description"
+      id="description"
+      placeholder="Add description.."
+    />
+  </div>
+  <div class="form-control">
+    <label for="dueDate">Due Date</label>
+    <input
+      type="text"
+      name="dueDate"
+      [(ngModel)]="dueDate"
+      id="dueDate"
+      placeholder="Add the Due Date.."
+    />
+  </div>
+  <div class="form-control">
+    <label for="tag">Tag</label>
+    <input
+      type="text"
+      name="tag"
+      [(ngModel)]="tag"
+      id="tag"
+      placeholder="Add a Tag.."
+    />
+  </div>
+  <input type="submit" value="Save Todo" class="btn btn-block" />
+</form>

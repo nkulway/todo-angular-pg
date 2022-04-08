@@ -4,5 +4,5 @@ export interface Todo {
     description: string
     dueDate?: string
     tag: string
-    UserId: number
+    UserId?: number
 }
