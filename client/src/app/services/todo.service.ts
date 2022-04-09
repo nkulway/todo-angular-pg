@@ -3,10 +3,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Observable} from 'rxjs'
 import {Todo} from '../Todo'
 
+const token = localStorage.getItem('token')
+
+
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type': 'application'
-  })
+    'Content-Type': 'application/json'
+    })
 }
 
 @Injectable({
@@ -27,6 +30,7 @@ export class TodoService {
   }
 
   addTodo(todo: Todo): Observable<Todo> {
+    console.log(todo)
     return this.http.post<Todo>(this.apiUrl, todo, httpOptions)
   }
 

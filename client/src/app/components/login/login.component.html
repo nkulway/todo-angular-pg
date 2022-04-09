@@ -1,0 +1,24 @@
+<form class="add-form" (ngSubmit)="onLogin()" *ngIf="true">
+  <div class="form-control">
+    <label for="usermame">Usermame</label>
+    <!-- two way data binding with [()] -->
+    <input
+      type="text"
+      name="username"
+      [(ngModel)]="username"
+      id="usermame"
+      placeholder="Enter usermame.."
+    />
+  </div>
+  <div class="form-control">
+    <label for="password">password</label>
+    <input
+      type="text"
+      name="password"
+      [(ngModel)]="password"
+      id="password"
+      placeholder="Enter password.."
+    />
+  </div>
+  <input type="submit" value="Login" class="btn btn-block" />
+</form>

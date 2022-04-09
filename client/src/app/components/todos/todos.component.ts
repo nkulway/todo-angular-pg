@@ -19,7 +19,7 @@ export class TodosComponent implements OnInit {
   deleteTodo(todo: Todo) {
     console.log(todo)
     // think of subscribe as .then()
-    this.todoService.deleteTodo(todo).subscribe(() => (this.todos = this.todos = this.todos.filter(t => t.id !== todo.id)))
+    this.todoService.deleteTodo(todo).subscribe(() => (this.todos = this.todos.filter(t => t.id !== todo.id)))
   }
 
   addTodo(todo: Todo) {
