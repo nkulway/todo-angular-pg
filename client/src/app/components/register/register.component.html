@@ -1,0 +1,27 @@
+<h1>Register a User</h1>
+<form class="add-form" (ngSubmit)="onRegister()" *ngIf="true">
+  <div class="form-control">
+    <label for="usermame">Usermame</label>
+    <!-- two way data binding with [()] -->
+    <input
+      type="text"
+      name="username"
+      [(ngModel)]="username"
+      id="register-usermame"
+      placeholder="Enter usermame.."
+      autocomplete="off"
+    />
+  </div>
+  <div class="form-control">
+    <label for="password">password</label>
+    <input
+      type="password"
+      name="password"
+      [(ngModel)]="password"
+      id="register-password"
+      placeholder="Enter password.."
+      autocomplete="off"
+    />
+  </div>
+  <input type="submit" value="Register" class="btn btn-block" />
+</form>
