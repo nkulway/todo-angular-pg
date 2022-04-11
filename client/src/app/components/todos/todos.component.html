@@ -1,7 +1,29 @@
 <app-add-todo (onAddTodo)="addTodo($event)"></app-add-todo>
 
+<app-button *ngIf="isLoggedIn" color="{{alpha ? 'green' : 'grey'}}" text="Sort Alphabetically" (click)="onAlphaSortSubmit()"></app-button>
+<app-button *ngIf="isLoggedIn" color="{{date ? 'green' : 'grey'}}" text="Sort by Due Date" (click)="onDateSortSubmit()"></app-button>
+
+<div *ngIf="alpha === false && date === false">
 <app-todo-item
   *ngFor="let todo of todos"
   [todo]="todo"
   (onDeleteTodo)="deleteTodo(todo)"
+  (onToggleComplete)="toggleComplete(todo)"
 ></app-todo-item>
+</div>
+
+<div *ngIf="alpha === true">
+<app-todo-item
+  *ngFor="let todo of todos | orderBy:'title'"
+  [todo]="todo"
+  (onDeleteTodo)="deleteTodo(todo)"
+></app-todo-item>
+</div>
+
+<div *ngIf="date === true">
+<app-todo-item
+  *ngFor="let todo of todos | orderBy: 'dueDate'"
+  [todo]="todo"
+  (onDeleteTodo)="deleteTodo(todo)"
+></app-todo-item>
+</div>

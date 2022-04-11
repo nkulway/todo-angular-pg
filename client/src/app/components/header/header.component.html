@@ -1,9 +1,16 @@
 <header>
-  <h1>{{ title }}</h1>
+  <h1 class="app-title">{{ title }}</h1>
   <!-- catching the btnClick emission -->
   <app-button
-    color="green"
-    text="Add"
-    (btnClick)="toggleAddTask()"
+    *ngIf="isLoggedIn"
+    color="{{showAddTask ? 'red' : 'green'}}"
+    text="{{showAddTask ? 'Close' : 'Add a ToDo'}}"
+    (btnClick)="toggleAddTodo()"
+  ></app-button>
+  <app-button
+    *ngIf="isLoggedIn"
+    color="Grey"
+    text="Log Out"
+    (btnClick)="logUserOut()"
   ></app-button>
 </header>

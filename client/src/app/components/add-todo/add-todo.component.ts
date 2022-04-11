@@ -1,41 +1,48 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Todo } from '../../Todo'
+import { Todo } from '../../Todo';
+import { UiService } from 'src/app/services/ui.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-add-todo',
   templateUrl: './add-todo.component.html',
-  styleUrls: ['./add-todo.component.css']
+  styleUrls: ['./add-todo.component.css'],
 })
 export class AddTodoComponent implements OnInit {
-  @Output() onAddTodo: EventEmitter<Todo> = new EventEmitter()
-  title: string
-  description: string
-  dueDate: any
-  tag: string
+  @Output() onAddTodo: EventEmitter<Todo> = new EventEmitter();
 
-  constructor() { }
+  title: string;
+  description: string;
+  dueDate: string;
+  tag: string;
+  showAddTask: boolean;
+  subscription: Subscription;
 
-  ngOnInit(): void {
+  constructor(private uiService: UiService) {
+    this.subscription = this.uiService
+      .onToggle()
+      .subscribe((value) => (this.showAddTask = value));
   }
 
+  ngOnInit(): void {}
+
   onSubmit() {
-    if(!this.title) {
-      alert('Please add a todo')
-      return
+    if (!this.title || !this.description || !this.dueDate || !this.tag) {
+      alert('Please include all required fields');
+      return;
     }
     const newTodo = {
       title: this.title,
       description: this.description,
       dueDate: this.dueDate,
-      tag: this.tag
-    }
+      tag: this.tag,
+    };
 
-    this.onAddTodo.emit(newTodo)
+    this.onAddTodo.emit(newTodo);
 
-    this.title = ''
-    this.description = ''
-    this.dueDate = ''
-    this.tag = ''
+    this.title = '';
+    this.description = '';
+    this.dueDate = '';
+    this.tag = '';
   }
-
 }

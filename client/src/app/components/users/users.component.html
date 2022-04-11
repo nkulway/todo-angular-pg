@@ -1,1 +1,2 @@
-<app-login (onUserLogin)="loginUser($event)"></app-login>
+<app-register (onHandleUser)="registerUser($event)" *ngIf="isLoggedOut"></app-register>
+<app-login (onHandleUser)="loginUser($event)" *ngIf="isLoggedOut"></app-login>

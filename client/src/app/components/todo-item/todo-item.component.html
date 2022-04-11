@@ -1,7 +1,13 @@
 <div class="todo">
   <h3>
-    {{ todo.description }}
-    <fa-icon (click)="onDelete(todo)" [ngStyle]="{ color: 'red' }" [icon]="faTimesCircle"></fa-icon>
+    {{ todo.title }}
+    <fa-icon
+      (click)="onDelete(todo)"
+      [ngStyle]="{ color: 'red' }"
+      [icon]="faTrashCan"
+    ></fa-icon>
   </h3>
-  <p>{{ todo.dueDate }}</p>
+  <p>{{ todo.description }}</p>
+  <p>{{ todo.dueDate | date: "mediumDate" }}</p>
+  <p>{{ todo.tag }}</p>
 </div>

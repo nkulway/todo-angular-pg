@@ -11,14 +11,23 @@ import { User } from 'src/app/User';
 export class UsersComponent implements OnInit {
   user: User
   loginResponse: LoginResponse
+  isLoggedOut: boolean = true
 
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
+    let token = localStorage.getItem('token')
+    token ? this.isLoggedOut = false : this.isLoggedOut = true
   }
 
   loginUser(user: User) {
-    console.log(this.userService.login(user).subscribe((loginResponse) => (localStorage.setItem('token', loginResponse.token))))
+    this.userService.login(user).subscribe((loginResponse) => (localStorage.setItem('token', loginResponse.token), window.location.reload()))
+
+  }
+
+  registerUser(user: User) {
+    this.userService.register(user).subscribe((loginResponse) => ((loginResponse.token), window.location.reload()))
+
   }
 
 }

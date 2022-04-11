@@ -1,3 +1,4 @@
+<h1>Log In</h1>
 <form class="add-form" (ngSubmit)="onLogin()" *ngIf="true">
   <div class="form-control">
     <label for="usermame">Usermame</label>
@@ -8,17 +9,21 @@
       [(ngModel)]="username"
       id="usermame"
       placeholder="Enter usermame.."
+      autocomplete="off"
     />
   </div>
   <div class="form-control">
     <label for="password">password</label>
     <input
-      type="text"
+      type="password"
       name="password"
       [(ngModel)]="password"
       id="password"
       placeholder="Enter password.."
+      autocomplete="off"
     />
   </div>
   <input type="submit" value="Login" class="btn btn-block" />
 </form>
+
+

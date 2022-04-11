@@ -5,16 +5,16 @@ import { Observable, Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class UiService {
-    private showAddTask: boolean = false
+    private showAddTodo: boolean = false
     private subject = new Subject<any>()
 
   constructor() { }
 
-  toggleAddTask(): void {
+  toggleAddTodo(): void {
     // set showAddTask to the opposite of itself
-    this.showAddTask = !this.showAddTask
+    this.showAddTodo = !this.showAddTodo
     // pass to header component
-    this.subject.next(this.showAddTask)
+    this.subject.next(this.showAddTodo)
   }
 
   onToggle(): Observable<any> {

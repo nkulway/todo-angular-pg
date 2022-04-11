@@ -5,7 +5,6 @@ import {User} from '../User'
 import { LoginResponse } from '../LoginResponse';
 
 let token = localStorage.getItem('token')
-console.log(token)
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -18,6 +17,8 @@ const httpOptions = {
 })
 export class UserService {
   private apiUrl = 'http://localhost:3000/api/v1/users/login'
+  private apiUrlRegister = 'http://localhost:3000/api/v1/users/register'
+
 
   constructor(private http:HttpClient) { }
 
@@ -28,5 +29,8 @@ export class UserService {
     return this.http.post<LoginResponse>(this.apiUrl, user, httpOptions)
   }
 
-
+  register(user: User): Observable<LoginResponse> {
+    console.log(user)
+    return this.http.post<LoginResponse>(this.apiUrlRegister, user, httpOptions)
+  }
 }

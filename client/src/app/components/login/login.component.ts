@@ -7,7 +7,7 @@ import { User } from 'src/app/User';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  @Output() onUserLogin: EventEmitter<User> = new EventEmitter()
+  @Output() onHandleUser: EventEmitter<User> = new EventEmitter()
   id: number
   username: string
   password: string
@@ -29,12 +29,17 @@ export class LoginComponent implements OnInit {
     }
 
 
-    this.onUserLogin.emit(userLogin)
+    this.onHandleUser.emit(userLogin)
+
+
 
     this.username = ''
     this.password = ''
 
+    console.log('works')
   }
+
+
 
 
 }
