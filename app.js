@@ -22,6 +22,8 @@ app.use(express.static(path.join(__dirname, 'client/dist')));
 app.use('/', indexRouter);
 app.use('/api/v1/users', usersRouter);
 app.use('/api/v1/todos', todosRouter);
-
+app.get('*', (req,res)=> {
+  res.sendFile(path.join(__dirname, 'client/build/index.html'))
+})
 
 module.exports = app;
