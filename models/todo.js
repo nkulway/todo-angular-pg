@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
   Todo.init({
     title: DataTypes.TEXT,
     description: DataTypes.TEXT,
-    dueDate: DataTypes.TEXT,
+    dueDate: DataTypes.DATE,
     tag: DataTypes.TEXT
   }, {
     sequelize,
