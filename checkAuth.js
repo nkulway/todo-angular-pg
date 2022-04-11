@@ -3,9 +3,7 @@ const jwt = require('jsonwebtoken')
 // Use this fx to protec all of the routes
 function checkAuth(req, res, next) {
 
-  // console.log(req.headers['Auhtorization'])
   const token = req.body.token || req.query.token || req.headers['x-access-token']
-  console.log(token)
 
   if (!token) {
     res.status(401).json({ error: 'please send valid token' })

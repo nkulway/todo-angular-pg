@@ -23,12 +23,5 @@ app.use('/', indexRouter);
 app.use('/api/v1/users', usersRouter);
 app.use('/api/v1/todos', todosRouter);
 
-// models.Todo.create({
-//   title: 'Create app',
-//   description: 'Build application using Angular and Postgres',
-//   dueDate: 'April 11th, 2022',
-//   tag: '#letsgo',
-//   UserId: 1
-// })
 
 module.exports = app;
