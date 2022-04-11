@@ -23,7 +23,7 @@ app.use('/', indexRouter);
 app.use('/api/v1/users', usersRouter);
 app.use('/api/v1/todos', todosRouter);
 app.get('*', (req,res)=> {
-  res.sendFile(path.join(__dirname, 'client/build/index.html'))
+  res.sendFile(path.join(__dirname, 'client/dist/index.html'))
 })
 
 module.exports = app;
