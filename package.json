@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
-    "postinstall": "cd client && npm install && ng build --aot --prod"
+    "heroku-postinstall": "cd client && npm install && ng build --aot --prod"
   },
   "dependencies": {
     "@auth0/angular-jwt": "^5.0.2",
