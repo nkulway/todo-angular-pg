@@ -7,7 +7,14 @@
 
 <p>Just ToDo It is an activity organizer for your everyday tasks</p>
 
-<h3>Deploy this app locally</h3>
+<h3>Build database and deploy this app locally</h3>
+<li>Clone repo and open in your IDE of choice - I use VS Code</li>
+<li>In the root terminal run 'npm install'</li>
+<li>Cd into the '/cliet' directory and run 'npm install'</li>
+<li>Cd back into the root directory and install sequelize cli using 'npm install sequelize-cli'</li>
+<li>Make sure Postgres is runnin on your machine.  If you require a password please enter in the /config/config.json</li>
+<li>In the root terminal run 'npx sequelize-cli db:create' in order to create the database</li>
+<li>In the root terminal run 'npx sequelize-cli db:migrate' in order to run the sequelize migrations</li>
 <li>Run 'npm run dev' in the backend terminal</li>
 <li>Cd into the '/client' directory and run 'ng serve' in the client terminal</li>
 
