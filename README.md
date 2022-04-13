@@ -12,15 +12,15 @@
 
 <li>Clone repo and open in your IDE of choice - I use VS Code</li>
 <li>In the root terminal run 'npm install'</li>
-<li>From the terminal, cd into the '/cliet' directory and run 'npm install'</li>
+<li>From the terminal, cd into the '/client' directory and run 'npm install'</li>
 <li>From the terminal, cd back into the root directory and install sequelize cli using 'npm install sequelize-cli'</li>
 <li>Verify the username in config.json</li>
 <li>Make sure Postgres is running on your machine.  If you require a password please enter it in config.json</li>
 <li>In the root terminal run 'npm run db:setup' in order to create the database and migrate tables</li>
-<li>Run 'npm run dev' in the backend terminal</li>
-<li>Cd into the '/client' directory and run 'npm run start' in the client terminal</li>
+<li>Run 'npm run dev' in the backend terminal and leave running</li>
+<li>In a separate terminal, cd into the '/client' directory and run 'npm run start' and leave running</li>
+<li>At this point, the app will be running locally on http://localhost:4200/</li>
 <li>I would like to point out that the '.env' file is exposed.  While I understand that this is not best practice, I have removed it from the .gitignore file to simplify the remote construction of this application.</li>
-<li>When deployed, this app will run locally on http://localhost:4200/</li>
 
 <h3>Database/Backend Scripts</h3>
 <hr>
