@@ -35,8 +35,6 @@ export class RegisterComponent implements OnInit {
 
     this.username = ''
     this.password = ''
-
-    console.log('works')
   }
 
 }

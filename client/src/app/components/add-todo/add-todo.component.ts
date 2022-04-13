@@ -44,5 +44,7 @@ export class AddTodoComponent implements OnInit {
     this.description = '';
     this.dueDate = '';
     this.tag = '';
+
+    window.location.reload()
   }
 }

@@ -25,12 +25,10 @@ export class UserService {
 
 
   login(user: User): Observable<LoginResponse> {
-    console.log(user)
     return this.http.post<LoginResponse>(this.apiUrl, user, httpOptions)
   }
 
   register(user: User): Observable<LoginResponse> {
-    console.log(user)
     return this.http.post<LoginResponse>(this.apiUrlRegister, user, httpOptions)
   }
 }

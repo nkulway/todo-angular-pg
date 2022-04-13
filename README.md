@@ -10,13 +10,14 @@
 <h3>Build database and deploy this app locally</h3>
 <li>Clone repo and open in your IDE of choice - I use VS Code</li>
 <li>In the root terminal run 'npm install'</li>
-<li>Cd into the '/cliet' directory and run 'npm install'</li>
-<li>Cd back into the root directory and install sequelize cli using 'npm install sequelize-cli'</li>
-<li>Make sure Postgres is runnin on your machine.  If you require a password please enter in the /config/config.json</li>
-<li>In the root terminal run 'npx sequelize-cli db:create' in order to create the database</li>
-<li>In the root terminal run 'npx sequelize-cli db:migrate' in order to run the sequelize migrations</li>
+<li>From the terminal, cd into the '/cliet' directory and run 'npm install'</li>
+<li>From the terminal, cd back into the root directory and install sequelize cli using 'npm install sequelize-cli'</li>
+<li>Verify the username in config.json</li>
+<li>Make sure Postgres is running on your machine.  If you require a password please enter it in config.json</li>
+<li>In the root terminal run 'npm run db:setup' in order to create the database and migrate tables</li>
 <li>Run 'npm run dev' in the backend terminal</li>
-<li>Cd into the '/client' directory and run 'ng serve' in the client terminal</li>
+<li>Cd into the '/client' directory and run 'npm run start' in the client terminal</li>
+<li>I would like to point out that the '.env' file is exposed.  While I understand that this is not best practice, I have removed it from the .gitignore file to simplify the remote construction of this application.</li>
 
 <h3>Functionality</h3>
 <hr>
@@ -24,23 +25,25 @@
 <p>Users are able to:</p>
 <ul>
 <li>Register a user with a username and password - passwords are hashed and stored in database</li>
-<li>Login as user and review all todos created by user - each todo is unique and held in a Todos table which is related to the Users table.  A todo list will only populate if a User is logged in and has addedd todos.</li>
+<li>Login as user and review all todos created by user - each todo is unique and held in a Todos table which is related to the Users table.  A todo list will only populate if a User is logged in and has added todos.</li>
 <li>Organize Todos list alphabetically</li>
 <li>Organize Todos list by due date</li>
 <li>Delete Todos as they are completed</li>
-<li>Log Out</li>
+<li>Log Out to hide todos</li>
 </ul>
 
 <h3>Technologies Used</h3>
 <hr>
 <ul>
-<li>Backend: Node.js https://nodejs.org/en/</li>
+<h5>Backend:</h5>
+<li>Node.js https://nodejs.org/en/</li>
 <li>Express https://expressjs.com/</li>
-<li>Template Engine: Express ES6 Template Engine https://www.npmjs.com/package/express-es6-template-engine</li>
 <li>Database: PostgreSQL https://www.postgresql.org/</li>
 <li>ORM: Sequelize https://sequelize.org/</li>
+<h5>Frontend:</h5>
 <li>Angular 13 https://angular.io/</li>  
 <li>Typescript https://www.typescriptlang.org/</li>
+<h5>Authentication:</h5>
 <li>JWT https://jwt.io/</li>
 
 <h3>Future Goals</h3>

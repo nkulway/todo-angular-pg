@@ -30,7 +30,6 @@ export class TodoService {
   }
 
   addTodo(todo: Todo): Observable<Todo> {
-    console.log(todo)
     return this.http.post<Todo>(this.apiUrl, todo, httpOptions)
   }
 
