@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "build": "cd client/ && npm install && npm run build",
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
     "heroku-postbuild": "cd client && npm install && npm run build",
@@ -27,5 +28,8 @@
     "pg": "^8.7.3",
     "sequelize": "^6.18.0",
     "sequelize-cli": "^6.4.1"
+  },
+  "engines": {
+    "node": "16.10.x"
   }
 }
