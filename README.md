@@ -2,7 +2,7 @@
 
 
 
-<h3>Project Scope</h>
+<h3>Just ToDo It is deployed at https://amesite-just-todo-it.herokuapp.com/</h>
 <hr>
 
 <p>Just ToDo It is an activity organizer for your everyday tasks</p>
@@ -63,7 +63,6 @@
 <h3>Future Goals</h3>
 <hr>
 <ul>
-<li>Debug deployment to Heroku</li>
 <li>Implement a store to pass state</li>
 
 

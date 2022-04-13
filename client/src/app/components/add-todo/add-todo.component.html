@@ -1,6 +1,6 @@
 <form class="add-form" (ngSubmit)="onSubmit()" *ngIf="showAddTask">
   <div class="form-control">
-    <label for="title">Title</label>
+    <label for="title">Title<span class="asterisk">*</span></label>
     <!-- two way data binding with [()] -->
     <input
       type="text"
@@ -12,7 +12,7 @@
     />
   </div>
   <div class="form-control">
-    <label for="description">Description</label>
+    <label for="description">Description<span class="asterisk">*</span></label>
     <input
       type="text"
       name="description"
@@ -22,7 +22,7 @@
     />
   </div>
   <div class="form-control">
-    <label for="dueDate">Due Date</label>
+    <label for="dueDate">Due Date<span class="asterisk">*</span></label>
     <input
       type="date"
       name="dueDate"
@@ -32,7 +32,7 @@
     />
   </div>
   <div class="form-control">
-    <label for="tag">Tag</label>
+    <label for="tag">Tag<span class="asterisk">*</span></label>
     <input
       type="text"
       name="tag"
