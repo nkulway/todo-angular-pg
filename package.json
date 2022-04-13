@@ -3,10 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "cd client/ && npm install && npm run build",
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
-    "heroku-postbuild": "cd client && npm install && npm run build",
+    "build": "cd client/ && npm install && npm run build --aot --prod",
+    "heroku-preinstall": "echo 'Heroku is now installing dependencies in the root folder.'",
+    "heroku-postinstall": "cd client/ && npm install && npm run build",
     "db:create": "npx sequelize-cli db:create",
     "db:destroy": "npx sequelize-cli db:drop",
     "db:migrate": "npx sequelize-cli db:migrate",
@@ -30,6 +31,7 @@
     "sequelize-cli": "^6.4.1"
   },
   "engines": {
-    "node": "16.10.x"
+    "node": "16.10.x",
+    "npm": "7.24.x"
   }
 }

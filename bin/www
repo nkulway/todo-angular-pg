@@ -3,7 +3,8 @@
 /**
  * Module dependencies.
  */
-
+// add dotenv so port 3000 is used as backup
+ require('dotenv').config()
 var app = require('../app');
 var debug = require('debug')('todo-angular-pg:server');
 var http = require('http');
