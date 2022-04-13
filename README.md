@@ -8,6 +8,7 @@
 <p>Just ToDo It is an activity organizer for your everyday tasks</p>
 
 <h3>Build database and deploy this app locally</h3>
+<h5>When deployed, this app will run locally on http://localhost:4200/</h5>
 <li>Clone repo and open in your IDE of choice - I use VS Code</li>
 <li>In the root terminal run 'npm install'</li>
 <li>From the terminal, cd into the '/cliet' directory and run 'npm install'</li>
