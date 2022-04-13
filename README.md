@@ -7,8 +7,9 @@
 
 <p>Just ToDo It is an activity organizer for your everyday tasks</p>
 
-<h3>Build database and deploy this app locally</h3>
-<h5>When deployed, this app will run locally on http://localhost:4200/</h5>
+<h3>Steps to build database and deploy this app locally</h3>
+<hr>
+
 <li>Clone repo and open in your IDE of choice - I use VS Code</li>
 <li>In the root terminal run 'npm install'</li>
 <li>From the terminal, cd into the '/cliet' directory and run 'npm install'</li>
@@ -19,8 +20,10 @@
 <li>Run 'npm run dev' in the backend terminal</li>
 <li>Cd into the '/client' directory and run 'npm run start' in the client terminal</li>
 <li>I would like to point out that the '.env' file is exposed.  While I understand that this is not best practice, I have removed it from the .gitignore file to simplify the remote construction of this application.</li>
+<li>When deployed, this app will run locally on http://localhost:4200/</li>
 
 <h3>Database/Backend Scripts</h3>
+<hr>
     <li>"start": "node ./bin/www"</li>
     <li>"dev": "nodemon ./bin/www",
     <li>"heroku-postinstall": "cd client && npm install && ng build --aot --prod"</li>
