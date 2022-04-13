@@ -66,4 +66,4 @@
 
 <h3>Credits</h3>
 <p>
-Nik Kulway (nkulway)</p>
+Nick Kulway (nkulway)</p>
