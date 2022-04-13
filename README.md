@@ -20,6 +20,16 @@
 <li>Cd into the '/client' directory and run 'npm run start' in the client terminal</li>
 <li>I would like to point out that the '.env' file is exposed.  While I understand that this is not best practice, I have removed it from the .gitignore file to simplify the remote construction of this application.</li>
 
+<h3>Database/Backend Scripts</h3>
+    <li>"start": "node ./bin/www"</li>
+    <li>"dev": "nodemon ./bin/www",
+    <li>"heroku-postinstall": "cd client && npm install && ng build --aot --prod"</li>
+    <li>"db:create": "npx sequelize-cli db:create"</li>
+    <li>"db:destroy": "npx sequelize-cli db:drop"</li>
+    <li>"db:migrate": "npx sequelize-cli db:migrate"</li>
+    <li>"db:reset": "npm run db:destroy; npm run db:create && npm run db:migrate"</li>
+    <li>"db:setup": "npm run db:create && npm run db:migrate"</li>
+
 <h3>Functionality</h3>
 <hr>
 
