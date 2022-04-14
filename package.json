@@ -5,7 +5,9 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
-    "heroku-postbuild": "cd client && npm install && npm run build && cd ..",
+    "build": "cd client/ && npm install && npm run build --aot --prod",
+    "heroku-preinstall": "echo 'Heroku is now installing dependencies in the root folder.'",
+    "heroku-postinstall": "cd client/ && npm install && npm run build",
     "db:create": "npx sequelize-cli db:create",
     "db:destroy": "npx sequelize-cli db:drop",
     "db:migrate": "npx sequelize-cli db:migrate",
