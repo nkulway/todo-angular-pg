@@ -14,7 +14,6 @@ export class AuthInterceptor implements HttpInterceptor {
     const req1 = req.clone({
       headers: req.headers
       .set('x-access-token', `${token}`)
-      .set('Access-Control-Allow-Origin', '*')
     });
 
     return next.handle(req1);
