@@ -68,9 +68,9 @@ router.post('/login', (req, res) => {
         // send success response
         res.json({ success: 'logged in', token })
         res.send({token})
-        return
       })
-   })
+    })
+    return
 })
 
 module.exports = router;
