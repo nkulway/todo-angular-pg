@@ -16,7 +16,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class TodoService {
-  private apiUrl = '/api/v1/todos'
+  private apiUrl = 'http://localhost:3000/api/v1/todos'
 
   constructor(private http:HttpClient) { }
 

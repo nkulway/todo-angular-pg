@@ -16,8 +16,8 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class UserService {
-  private apiUrl = '/api/v1/users/login'
-  private apiUrlRegister = '/api/v1/users/register'
+  private apiUrl = 'http://localhost:3000/api/v1/users/login'
+  private apiUrlRegister = 'http://localhost:3000/api/v1/users/register'
 
 
   constructor(private http:HttpClient) { }
