@@ -27,17 +27,7 @@ app.get('*', (req,res)=> {
   res.sendFile(path.resolve(__dirname, 'client/dist/todo-angular-pg/', 'index.html'))
 })
 
-app.use((req, res, next) => {
-  const err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
 
-app.use((err, req, res, next) => {
-  res.locals.error = err;
-  const status = err.status || 500;
-  res.status(status).send(status);
-});
 
 
 module.exports = app;
