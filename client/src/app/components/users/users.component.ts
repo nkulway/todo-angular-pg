@@ -20,6 +20,7 @@ export class UsersComponent implements OnInit {
     token ? this.isLoggedOut = false : this.isLoggedOut = true
   }
 
+  // a subscription to an observable will trigger the observable to execute
   loginUser(user: User) {
     this.userService.login(user).subscribe((loginResponse) => (localStorage.setItem('token', loginResponse.token), window.location.reload()))
 

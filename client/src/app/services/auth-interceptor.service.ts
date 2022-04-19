@@ -11,6 +11,7 @@ export class AuthInterceptor implements HttpInterceptor {
       return next.handle(req);
     }
 
+    // intercept http headers and inject token
     const req1 = req.clone({
       headers: req.headers
       .set('x-access-token', `${token}`)

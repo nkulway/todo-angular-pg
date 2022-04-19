@@ -23,7 +23,7 @@ export class HeaderComponent implements OnInit {
       .subscribe((value) => (this.showAddTask = value));
   }
 
-  // Lifecycle method --> http request
+  // Lifecycle method
   ngOnInit(): void {
     let token = localStorage.getItem('token')
     token ? this.isLoggedIn = true : this.isLoggedIn = false

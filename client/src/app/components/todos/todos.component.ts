@@ -26,7 +26,7 @@ export class TodosComponent implements OnInit {
   }
 
   deleteTodo(todo: Todo) {
-    // think of subscribe as .then()
+    // think of subscribe as .then() - it triggers an observable
     this.todoService.deleteTodo(todo).subscribe(() => (this.todos = this.todos.filter(t => t.id !== todo.id)))
   }
 
@@ -34,16 +34,20 @@ export class TodosComponent implements OnInit {
     this.todoService.addTodo(todo).subscribe((todo) => (this.todos.push(todo)))
   }
 
+
+  // when ran sets alpha to true and date to false
   onAlphaSortSubmit() {
     this.alpha = true
     this.date = false
   }
 
+  // when rann sets date to true and alpha to false
   onDateSortSubmit() {
     this.date = true
     this.alpha = false
   }
 
+  // checks local storage to see if there is a token - if so then the user is logged in
   checkUserLogin() {
     let token = localStorage.getItem('token')
     token ? this.isLoggedIn = true : this.isLoggedIn = false

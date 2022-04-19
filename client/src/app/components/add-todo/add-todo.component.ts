@@ -19,6 +19,7 @@ export class AddTodoComponent implements OnInit {
   subscription: Subscription;
 
   constructor(private uiService: UiService) {
+    // show and hide todo form
     this.subscription = this.uiService
       .onToggle()
       .subscribe((value) => (this.showAddTask = value));
@@ -38,6 +39,7 @@ export class AddTodoComponent implements OnInit {
       tag: this.tag,
     };
 
+    // emitting new todo to event in todos
     this.onAddTodo.emit(newTodo);
 
     this.title = '';
